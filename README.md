@@ -10,9 +10,9 @@ artifact dug from a lost civilisation.
 
 ## The placard
 
-> Sticky notes, Cat. 2024.11.4, c. 2010 CE; cellulose pulp and adhesive gum; recovered from monitor shrine, donor anonymous (handwriting illegible).
+> Mug, 'World's Best Boss,' c. 2011. Ceramic, coffee residue. Provenance: Floor 3 break room. Inscription considered by scholars to be propaganda.
 
-146 characters — inside the 1–180 gate.
+144 characters — inside the 1–180 gate.
 
 ## How it works
 

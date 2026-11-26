@@ -1,18 +1,18 @@
-// Office Artifacts: The One-Line Placard Contest
-// Writes a single museum placard line for an ordinary office object
-// treated as an ancient artifact, to /output/entry.txt.
+// Office Artifacts placard entry — writes one museum-placard line to /output/entry.txt.
+// The line is fixed text; the program is deterministic (two runs are byte-identical).
 import { mkdirSync, writeFileSync } from "node:fs";
+import { join } from "node:path";
 
 const LINE =
-  "Sticky notes, Cat. 2024.11.4, c. 2010 CE; cellulose pulp and adhesive gum; recovered from monitor shrine, donor anonymous (handwriting illegible).";
+  "Mug, 'World's Best Boss,' c. 2011. Ceramic, coffee residue. Provenance: Floor 3 break room. Inscription considered by scholars to be propaganda.";
 
-const OUTPUT_PATH = "/output/entry.txt";
+const outDir = process.env.MAKEFUN_OUTPUT_DIR ?? "/output";
 
-// Gate check (RULES.txt): entry must be 1–180 characters of UTF-8 text,
-// not only whitespace. Fail loudly rather than write an invalid entry.
+// Gate (RULES.txt): entry must be 1–180 characters of UTF-8 text, not only
+// whitespace. Fail loudly rather than write an invalid entry.
 if (LINE.length < 1 || LINE.length > 180 || LINE.trim().length === 0) {
   throw new Error(`Placard line is ${LINE.length} chars — outside the 1–180 gate.`);
 }
 
-mkdirSync("/output", { recursive: true });
-writeFileSync(OUTPUT_PATH, LINE, "utf8");
+mkdirSync(outDir, { recursive: true });
+writeFileSync(join(outDir, "entry.txt"), LINE, "utf8");
